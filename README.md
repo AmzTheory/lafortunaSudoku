@@ -1,0 +1,2 @@
+# lafortunaSudoku
+Sudoku for lafortuna
