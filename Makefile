@@ -15,7 +15,7 @@ CFLAGS    := -Os -mmcu=$(MCU) -DF_CPU=$(F_CPU)
 # CFLAGS    += -Wl,-u,vfprintf -lprintf_flt -lm  # floating point support
 CFLAGS    += -fno-strict-aliasing  # FATfs does not adhere to strict aliasing
 CFLAGS    += -Wno-main             # main() will never return
-CFLAGS    += -Wall -Wextra -pedantic
+CFLAGS    += -Wall -Wextra
 #CFLAGS    += -std=c99 -pedantic
 CFLAGS    += -Wstrict-overflow=5 -fstrict-overflow -Winline
 CHKFLAGS  :=
@@ -45,7 +45,7 @@ upld: $(BUILD_DIR)/main.hex
 	$(info =========== ${BOARD} =============)
 	dfu-programmer $(MCU) erase
 	dfu-programmer $(MCU) flash $(BUILD_DIR)/main.hex
-	dfu-programmer $(MCU) launch --no-reset # requires dfu-programmer >= v0.7.0
+	dfu-programmer $(MCU) launch  # requires dfu-programmer >= v0.7.0
 
 prom: $(BUILD_DIR)/main.eep upld
 	$(info ======== EEPROM: ${BOARD} ========)

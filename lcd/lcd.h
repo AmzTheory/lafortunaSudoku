@@ -3,7 +3,9 @@
  *           View this license at http://creativecommons.org/about/licenses/
  */
  
+#include <avr/io.h>
 #include <stdint.h>
+
 
 #define LCDWIDTH	240
 #define LCDHEIGHT	320
@@ -17,10 +19,13 @@
 #define RED         0xF800      
 #define MAGENTA     0xF81F      
 #define YELLOW      0xFFE0
-#define GREY        0x8410
+#define ORANGE      0xFD20
 #define DARK_GREY   0xAD55
 
-typedef enum {North, West, South, East} orientation;
+	typedef enum { North,
+				   West,
+				   South,
+				   East } orientation;
 
 typedef struct {
 	uint16_t width, height;
@@ -46,3 +51,4 @@ void fill_rectangle_indexed(rectangle r, uint16_t* col);
 void display_char(char c);
 void display_string(char *str);
 void display_string_xy(char *str, uint16_t x, uint16_t y);
+void display_register(uint8_t reg);
