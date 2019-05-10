@@ -6,7 +6,11 @@ Sudoku that can be played in lafortuna.It uses the same rules as the wide known 
 2. connect your la fortuna to the running machine 
 3. run make command from terminal
 4.the game shall run in your la fortuna
-
+# How to play
+* use the button to navigate the grid 
+* use the centre button when you're at the cell you need to modify
+* use the top and bottom button to choose the number
+* press the centre button again  to confirm the cell value
 # Future Work
 * allow the program to generate valid sudoku game (currently I've only defined ones)
 * current winning checking is very basic, will be improved 
